@@ -1,0 +1,5 @@
+{
+  "name": "grunt-phpstan",
+  "main": "tasks/phpstan.js",
+  "license": "GPL-3.0"
+}
