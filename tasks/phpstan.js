@@ -15,13 +15,14 @@ module.exports = function (grunt) {
                     config: null
                 }
             );
-            var command = options.bin + " analyze -l " + options.level;
+            var args = ["analyze", "-l", options.level];
             if (options.config) {
-                command += " -c " + options.config;
+                args.push("-c", options.config);
             }
-            command += " " + this.filesSrc.join(" ");
-            child_process.exec(
-                command,
+            args = args.concat(this.filesSrc);
+            child_process.execFile(
+                options.bin,
+                args,
                 null,
                 function (error, stdout) {
                     var result = false;
