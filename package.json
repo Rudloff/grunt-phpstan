@@ -1,6 +1,18 @@
 {
   "name": "grunt-phpstan",
-  "main": "tasks/phpstan.js",
+  "description": "Grunt task that runs phpstan",
+  "version": "0.2.0",
+  "author": "Pierre Rudloff",
+  "bugs": "https://github.com/Rudloff/grunt-phpstan/issues",
+  "devDependencies": {
+    "fixpack": "~2.3.1"
+  },
+  "homepage": "https://github.com/Rudloff/grunt-phpstan",
+  "keywords": [
+    "Grunt",
+    "phpstan"
+  ],
   "license": "GPL-3.0",
-  "version": "0.1.0"
+  "main": "tasks/phpstan.js",
+  "repository": "https://github.com/Rudloff/grunt-phpstan.git"
 }

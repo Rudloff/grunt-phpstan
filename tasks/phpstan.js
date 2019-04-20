@@ -11,12 +11,18 @@ module.exports = function (grunt) {
             var options = this.options(
                 {
                     level: 1,
-                    bin: "phpstan"
+                    bin: "phpstan",
+                    config: null
                 }
             );
-            child_process.exec(
-                options.bin + " analyze -l " + options.level +
-                " " + this.filesSrc.join(" "),
+            var args = ["analyze", "-l", options.level];
+            if (options.config) {
+                args.push("-c", options.config);
+            }
+            args = args.concat(this.filesSrc);
+            child_process.execFile(
+                options.bin,
+                args,
                 null,
                 function (error, stdout) {
                     var result = false;
