@@ -22,7 +22,7 @@ module.exports = function (grunt) {
         }
     });
 
-    grunt.loadNpmTasks("grunt-ar");
+    grunt.loadNpmTasks("grunt-phpstan");
 };
 ```
 
