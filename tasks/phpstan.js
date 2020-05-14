@@ -1,21 +1,21 @@
 /*jslint node: true, this: true */
 "use strict";
-var child_process = require("child_process");
+const child_process = require("child_process");
 
 module.exports = function (grunt) {
     grunt.registerMultiTask(
         "phpstan",
         "Check your PHP files with phpstan",
         function () {
-            var done = this.async();
-            var options = this.options(
+            const done = this.async();
+            const options = this.options(
                 {
                     level: 1,
                     bin: "phpstan",
                     config: null
                 }
             );
-            var args = ["analyze", "-l", options.level];
+            let args = ["analyze", "-l", options.level];
             if (options.config) {
                 args.push("-c", options.config);
             }
@@ -25,7 +25,7 @@ module.exports = function (grunt) {
                 args,
                 null,
                 function (error, stdout) {
-                    var result = false;
+                    let result = false;
 
                     if (error) {
                         if (error.code === 1) {
