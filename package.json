@@ -5,7 +5,7 @@
   "author": "Pierre Rudloff",
   "bugs": "https://github.com/Rudloff/grunt-phpstan/issues",
   "devDependencies": {
-    "fixpack": "~2.3.1"
+    "fixpack": "^3.0.6"
   },
   "homepage": "https://github.com/Rudloff/grunt-phpstan",
   "keywords": [
