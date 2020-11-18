@@ -10,12 +10,21 @@ module.exports = function (grunt) {
             const done = this.async();
             const options = this.options(
                 {
-                    level: 1,
+                    level: null,
                     bin: "phpstan",
                     config: null
                 }
             );
-            let args = ["analyze", "-l", options.level];
+            let args = ["analyze"];
+
+            // if no level has been specified and no config file has been specified, default the level to 1
+            if(options.level === null && options.config === null) {
+                options.level = 1;
+            }
+
+            if (options.level) {
+                args.push("-l", options.level);
+            }
             if (options.config) {
                 args.push("-c", options.config);
             }
